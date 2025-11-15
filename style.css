@@ -1,0 +1,415 @@
+/* IMPORTACIÓN DE FUENTE: Orbitron (Futurista/Técnica) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap'); /* Fuente de respaldo legible */
+
+/* PALETA DE COLORES */
+:root {
+    --color-fondo-principal: #0a0f23; /* Azul muy oscuro/casi negro */
+    --color-fondo-tarjeta: #031032; /* Gris azulado oscuro */
+    --color-acento-neon: #00ffff; /* Cian brillante */
+    --color-acento-gradiente: linear-gradient(90deg, #00f0ff, #0055ff);
+    --color-texto-claro: #0ff; /* Texto principal (cian neón) */
+    --color-texto-secundario: #aaffffaa; /* Texto menos prominente */
+    
+    /* EFECTOS DE SOMBRA */
+    --sombra-neon-fuerte: 0 0 15px var(--color-acento-neon), 0 0 30px #00ffff88;
+    --sombra-neon-suave: 0 0 8px #00ffff88, inset 0 0 6px #00ffff44;
+}
+
+/* BASE Y RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-fondo-principal);
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color-texto-claro);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    text-shadow: 0 0 5px var(--color-acento-neon);
+    margin-bottom: 20px;
+}
+
+.seccion {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 1. HEADER / HERO */
+.hero {
+    background: linear-gradient(180deg, #0a0f23, #021026);
+    padding: 120px 5% 80px;
+    text-align: center;
+    border-bottom: 3px solid #00ffff;
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    letter-spacing: 5px;
+    text-shadow: 0 0 15px var(--color-acento-neon), 0 0 30px #00ffffaa;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-texto-secundario);
+    margin-bottom: 30px;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px;
+    border: 3px solid var(--color-acento-neon);
+    box-shadow: var(--sombra-neon-fuerte);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: rotate(3deg) scale(1.05);
+}
+
+/* BOTONES (Adaptado de contact-btn) */
+.boton-acento {
+    background: var(--color-acento-gradiente);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    text-shadow: 0 0 5px #00ffffcc;
+    padding: 12px 25px;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+.boton-acento:hover {
+    box-shadow: 0 0 20px #00ffffee;
+    transform: translateY(-2px);
+}
+.boton-acento.small {
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+/* 2. ACERCA DE MÍ / EDUCACIÓN */
+#acerca-de h2 { text-align: center; margin-bottom: 40px; }
+
+.bio-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    color: var(--color-texto-secundario);
+    font-family: 'Roboto', sans-serif; /* Usar fuente más legible para bloques de texto */
+}
+.bio-educacion h3 {
+    color: var(--color-acento-neon);
+    text-shadow: none;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+.bio-educacion ul {
+    list-style: none;
+    padding-left: 0;
+}
+.bio-educacion ul li {
+    background: #021026;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--color-acento-neon);
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+.bio-educacion ul li:hover { background: #03254e; }
+
+
+/* 3. SECCIÓN HABILIDADES (CUBOS) */
+#habilidades { background: #021026; }
+#habilidades h2 { text-align: center; margin-bottom: 40px; }
+
+.habilidades-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.skill-card {
+    background: var(--color-fondo-tarjeta);
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #00ffff66;
+    box-shadow: 0 0 10px #00ffff33;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 140px;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-neon-fuerte);
+    border-color: var(--color-acento-neon);
+}
+
+.skill-card i {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--color-acento-neon);
+    text-shadow: 0 0 8px var(--color-acento-neon);
+}
+
+.skill-card span {
+    display: block;
+    color: var(--color-texto-claro);
+    font-size: 0.9rem;
+}
+
+
+/* 4. SECCIÓN PORTAFOLIO (TARJETAS) */
+#portafolio h2 { text-align: center; }
+
+.galeria-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-proyecto {
+    background: var(--color-fondo-tarjeta);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: var(--sombra-neon-suave);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta-proyecto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px #00ffffee, inset 0 0 20px #00ffffcc;
+}
+
+.tarjeta-proyecto img {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid var(--color-acento-neon);
+    box-shadow: 0 0 10px #00ffffbb;
+    margin-bottom: 15px;
+}
+
+.tarjeta-info h3 {
+    font-size: 1.3rem;
+    text-shadow: 0 0 5px #00ffffcc;
+    margin-bottom: 10px;
+}
+
+.tarjeta-info p {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-texto-secundario);
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+
+/* 5. SECCIÓN LOGIN (PORTAL) */
+#portal-acceso { background: #021026; }
+#portal-acceso h2 { text-align: center; }
+
+.login-box {
+    max-width: 400px;
+    margin: 0 auto;
+    background: var(--color-fondo-tarjeta);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #00ffff66;
+    box-shadow: var(--sombra-neon-fuerte);
+}
+
+.login-box p {
+    color: var(--color-texto-secundario);
+    font-family: 'Roboto', sans-serif;
+}
+
+.campo-login { margin-bottom: 20px; }
+
+.campo-login label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--color-acento-neon);
+    letter-spacing: 1px;
+}
+
+.campo-login input {
+    width: 100%;
+    padding: 12px;
+    background: var(--color-fondo-principal);
+    color: var(--color-texto-claro);
+    border: 1px solid #00ffff66;
+    border-radius: 6px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: 'Roboto', sans-serif;
+}
+
+.campo-login input:focus {
+    border-color: var(--color-acento-neon);
+    box-shadow: 0 0 10px var(--color-acento-neon);
+    outline: none;
+}
+
+.error-msg {
+    color: #ff00ff; /* Rosado neón para errores */
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+    text-shadow: 0 0 5px #ff00ff;
+    min-height: 20px;
+}
+
+
+/* 6. FOOTER */
+footer {
+    background: #000000;
+    color: #004466;
+    font-family: 'Roboto', sans-serif;
+    padding: 30px 5%;
+    text-align: center;
+    border-top: 1px solid #00ffff33;
+}
+
+footer a {
+    color: var(--color-acento-neon);
+    text-decoration: none;
+    text-shadow: 0 0 5px var(--color-acento-neon);
+    transition: color 0.3s;
+}
+footer a:hover { color: #00ffee; }
+
+.copyright {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #00ffff55;
+}
+
+/* --- ESTILOS PARA EL MODAL DE DETALLES --- */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; 
+    z-index: 2000; /* Asegura que esté por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background: rgba(0, 0, 0, 0.85); /* Fondo semitransparente oscuro */
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: var(--color-fondo-tarjeta);
+    margin: 5% auto; /* Centrado vertical */
+    padding: 30px;
+    border: 2px solid var(--color-acento-neon);
+    border-radius: 12px;
+    width: 80%; /* Ancho general */
+    max-width: 900px; /* Ancho máximo para pantallas grandes */
+    box-shadow: var(--sombra-neon-fuerte);
+    position: relative;
+    animation: fadeIn 0.4s;
+    text-align: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid var(--color-acento-neon);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.close-btn {
+    color: var(--color-acento-neon);
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+    text-shadow: 0 0 5px var(--color-acento-neon);
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #ff00ff; /* Cambia a otro neón al hacer hover para resaltar */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .hero h2 { font-size: 1.2rem; }
+    .bio-grid { grid-template-columns: 1fr; }
+    .seccion { padding: 60px 5%; }
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+    }
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+
+.modal-nav {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-nav button {
+    background: var(--color-acento-gradiente);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.modal-nav button:hover {
+    box-shadow: 0 0 15px var(--color-acento-neon);
+    transform: translateY(-2px);
+}
